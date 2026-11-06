@@ -1,7 +1,7 @@
 /// <author>lusen</author>
 /// <date>2026-11-06</date>
 /// <summary>
-/// 按脊柱蓝图生成生物, 结果直接写入 CreatureData.parts
+/// 按种子与蓝图生成生物拓扑, 结果写入 CreatureData.parts
 /// </summary>
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,16 +21,18 @@ public static class CreatureGenerator
 
         int head = Add(parts, ref nextId, NodeType.Head, 0, spine[0]);
         if (random.NextDouble() < config.antennaChance)
-            for (int n = 0, pairs = Range(random, config.antennaPairs); n < pairs; n++)
-                for (int side = -1; side <= 1; side += 2)
-                    Add(parts, ref nextId, NodeType.End, side, head);
+            for (int side = -1; side <= 1; side += 2) {
+                int cursor = head;
+                for (int n = 0, count = Range(random, config.antennaSegments); n < count; n++)
+                    cursor = Add(parts, ref nextId, NodeType.Antenna, side, cursor);
+            }
 
         for (int i = 1; i < segmentCount; i++)
             spine[i] = Add(parts, ref nextId, NodeType.Body, 0, spine[i - 1]);
 
         foreach (int segment in spine)
             if (random.NextDouble() < config.legPairChance)
-                AddLegs(parts, ref nextId, segment, Range(random, config.legJoints));
+                AddLegs(parts, ref nextId, segment);
 
         if (random.NextDouble() < config.tailChance) {
             int cursor = spine[^1];
@@ -39,13 +41,11 @@ public static class CreatureGenerator
         }
     }
 
-    private static void AddLegs(List<CreaturePart> parts, ref int nextId, int segment, int joints)
+    private static void AddLegs(List<CreaturePart> parts, ref int nextId, int segment)
     {
         for (int side = -1; side <= 1; side += 2) {
-            int cursor = Add(parts, ref nextId, NodeType.Limb, side, segment);
-            for (int i = 0; i < joints; i++)
-                cursor = Add(parts, ref nextId, NodeType.Joint, side, cursor);
-            Add(parts, ref nextId, NodeType.End, side, cursor);
+            int limb = Add(parts, ref nextId, NodeType.Limb, side, segment);
+            Add(parts, ref nextId, NodeType.End, side, limb);
         }
     }
 
