@@ -16,6 +16,6 @@ MonoBehaviour:
   legPairChance: 0.8
   legJoints: {x: 1, y: 3}
   antennaChance: 0.5
+  antennaPairs: {x: 1, y: 2}
   tailChance: 0.7
   tailSegments: {x: 1, y: 3}
-  maxNodes: 64

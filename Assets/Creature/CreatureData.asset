@@ -13,4 +13,28 @@ MonoBehaviour:
   m_Name: CreatureData
   m_EditorClassIdentifier: Assembly-CSharp::CreatureData
   displayName: 
-  parts: []
+  parts:
+  - id: 0
+    type: 1
+    side: 0
+    parentId: -1
+  - id: 3
+    type: 0
+    side: 0
+    parentId: 0
+  - id: 4
+    type: 4
+    side: -1
+    parentId: 3
+  - id: 5
+    type: 4
+    side: 1
+    parentId: 3
+  - id: 1
+    type: 1
+    side: 0
+    parentId: 0
+  - id: 2
+    type: 1
+    side: 0
+    parentId: 1
