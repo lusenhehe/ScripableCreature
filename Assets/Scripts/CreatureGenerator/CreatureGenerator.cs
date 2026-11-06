@@ -25,18 +25,17 @@ public static class CreatureGenerator
         pending.Enqueue((root, seed.GetHashCode()));
 
         while (pending.Count > 0) {
-            // 从队列中取出待处理节点及其种子
             var (node, nodeSeed) = pending.Dequeue();
+            // 深度或节点预算到达后直接停扩, 当前节点即为叶子
+            if (node.depth >= config.maxDepth || nextId >= config.maxNodes) continue;
+
             System.Random random = new System.Random(nodeSeed);
-            // 判断是否超过生成预算 (深度或节点数)
-            bool overBudget = node.depth >= config.maxDepth || nextId >= config.maxNodes;
-            Production production = PickProduction(node.rule.productions, overBudget, random);
+            Production production = PickProduction(node.rule.productions, random);
             if (production == null) continue;
-            // 遍历生成规则的挂载位
+
             foreach (Slot slot in production.slots) {
-                // 如果该挂载位没有子节点或未通过概率检查, 则跳过
                 if (!slot.child || random.NextDouble() >= slot.chance) continue;
-                // 计算该挂载位需要生成的子节点数量
+
                 int count = random.Next(slot.count.x, Mathf.Max(slot.count.x, slot.count.y) + 1);
                 int[] sides = slot.mirrored ? new[] { -1, 1 } : new[] { node.side };
                 for (int i = 0; i < count; i++) {
@@ -63,18 +62,14 @@ public static class CreatureGenerator
         if (truncated) Debug.LogWarning($"节点数达到上限 {config.maxNodes}, 部分挂载位被截断, 请检查规则是否过大");
         return root;
     }
+
     /// <summary>
-    /// 从给定的生成规则列表中选择一个生成规则
+    /// 按权重从长法列表中抽取一条
     /// </summary>
-    /// <param name="productions">生成规则列表</param>
-    /// <param name="terminalOnly">是否只选择终端规则</param>
-    /// <param name="random">随机数生成器</param>
-    /// <returns>选中的生成规则, 若无可选规则则返回 null</returns>
-    private static Production PickProduction(List<Production> productions, bool terminalOnly, System.Random random)
+    private static Production PickProduction(List<Production> productions, System.Random random)
     {
-        List<Production> candidates = productions.Where(p => !terminalOnly || p.terminal).ToList();
-        float roll = (float)random.NextDouble() * candidates.Sum(p => p.weight);
-        foreach (Production production in candidates) {
+        float roll = (float)random.NextDouble() * productions.Sum(p => p.weight);
+        foreach (Production production in productions) {
             roll -= production.weight;
             if (roll < 0f) return production;
         }

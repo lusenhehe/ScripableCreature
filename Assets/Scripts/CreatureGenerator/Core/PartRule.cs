@@ -13,9 +13,8 @@ public class PartRule : ScriptableObject {
 }
 [Serializable]
 public class Production {
-    [Tooltip("抽中权重")][Min(0f)]                              public float weight = 1.0f;
-    [Tooltip("超出深度或节点预算时那么只能抽取终端长法")]     public bool terminal;
-    [Tooltip("挂载位")]                                          public List<Slot> slots = new();
+    [Tooltip("抽中权重")][Min(0f)]  public float weight = 1.0f;
+    [Tooltip("挂载位")]             public List<Slot> slots = new();
 }
 [Serializable]
 public class Slot {
