@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ba181a224cc694991ed7033b8179a2, type: 3}
   m_Name: "\u8282\u80A2\u52A8\u7269"
   m_EditorClassIdentifier: Assembly-CSharp::GenerationConfig
-  root: {fileID: 0}
-  maxDepth: 5
+  spineSegments: {x: 2, y: 4}
+  legPairChance: 0.8
+  legJoints: {x: 1, y: 3}
+  antennaChance: 0.5
+  tailChance: 0.7
+  tailSegments: {x: 1, y: 3}
   maxNodes: 64
