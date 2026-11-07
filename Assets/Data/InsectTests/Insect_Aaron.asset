@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28226d8335c16e142a4577aab424eb12, type: 3}
+  m_Name: Insect_Aaron
+  m_EditorClassIdentifier: Assembly-CSharp::InsectData
+  seed: Aaron
+  parts:
+  - id: 0
+    part: 0
+    parentId: -1
+    length: 0.016
+    radius: 0.022
+  - id: 1
+    part: 4
+    parentId: 0
+    length: 0.034
+    radius: 0.018000001
+  - id: 2
+    part: 7
+    parentId: 1
+    length: 0.040000003
+    radius: 0.025
+  - id: 3
+    part: 1
+    parentId: 0
+    length: 0.012999999
+    radius: 0.00080000004
+  - id: 4
+    part: 1
+    parentId: 0
+    length: 0.012999999
+    radius: 0.0025000002
+  - id: 5
+    part: 3
+    parentId: 0
+    length: 0.014
+    radius: 0.011
+  - id: 6
+    part: 3
+    parentId: 0
+    length: 0.022
+    radius: 0.007
+  - id: 7
+    part: 3
+    parentId: 0
+    length: 0.014
+    radius: 0.003
+  - id: 8
+    part: 3
+    parentId: 0
+    length: 0.014
+    radius: 0.011
+  - id: 9
+    part: 3
+    parentId: 0
+    length: 0.006
+    radius: 0.003
+  - id: 10
+    part: 5
+    parentId: 1
+    length: 0.044999998
+    radius: 0.0015
+  - id: 11
+    part: 5
+    parentId: 1
+    length: 0.0775
+    radius: 0.0045000003
+  - id: 12
+    part: 5
+    parentId: 1
+    length: 0.044999998
+    radius: 0.0045000003
+  - id: 13
+    part: 5
+    parentId: 1
+    length: 0.044999998
+    radius: 0.0015
+  - id: 14
+    part: 5
+    parentId: 1
+    length: 0.044999998
+    radius: 0.003
+  - id: 15
+    part: 6
+    parentId: 1
+    length: 0.065
+    radius: 0.030000001
+  - id: 16
+    part: 8
+    parentId: 2
+    length: 0.008
+    radius: 0.0035
+  - id: 17
+    part: 8
+    parentId: 2
+    length: 0.0265
+    radius: 0.00215
+  - id: 18
+    part: 8
+    parentId: 2
+    length: 0.0265
+    radius: 0.00215

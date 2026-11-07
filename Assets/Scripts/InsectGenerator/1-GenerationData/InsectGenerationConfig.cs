@@ -12,5 +12,5 @@ using System.Collections.Generic;
 public class InsectGenerationConfig : ScriptableObject
 {
     [Tooltip("体长 B (米)")] [Min(0.0001f)] public float bodyLength = 0.1f;
-    public List<GenerationRule> rules;
+    public List<GenerationRule> rules;           // 子部位规则（口器/触角/眼/足/翅/附肢）
 }

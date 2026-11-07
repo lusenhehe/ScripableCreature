@@ -1,0 +1,257 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b03a7d4e7aea5b4daa3ecc71db11c71, type: 3}
+  m_Name: InsectGenerationConfig
+  m_EditorClassIdentifier: Assembly-CSharp::InsectGenerationConfig
+  bodyLength: 0.1
+  rules:
+  - part: 0
+    probability: 1
+    amountOptions:
+    - amount: 1
+      weight: 1
+    isBodySegment: 1
+    isMirrored: 0
+    lengthOptions:
+    - amount: 0.16
+      weight: 1
+    - amount: 0.2
+      weight: 2
+    - amount: 0.24
+      weight: 1
+    radiusOptions:
+    - amount: 0.14
+      weight: 1
+    - amount: 0.18
+      weight: 2
+    - amount: 0.22
+      weight: 1
+  - part: 4
+    probability: 1
+    amountOptions:
+    - amount: 1
+      weight: 1
+    isBodySegment: 1
+    isMirrored: 0
+    lengthOptions:
+    - amount: 0.26
+      weight: 1
+    - amount: 0.3
+      weight: 2
+    - amount: 0.34
+      weight: 1
+    radiusOptions:
+    - amount: 0.18
+      weight: 1
+    - amount: 0.23
+      weight: 2
+    - amount: 0.28
+      weight: 1
+  - part: 7
+    probability: 1
+    amountOptions:
+    - amount: 1
+      weight: 1
+    isBodySegment: 1
+    isMirrored: 0
+    lengthOptions:
+    - amount: 0.4
+      weight: 1
+    - amount: 0.48
+      weight: 2
+    - amount: 0.56
+      weight: 1
+    radiusOptions:
+    - amount: 0.2
+      weight: 1
+    - amount: 0.25
+      weight: 2
+    - amount: 0.3
+      weight: 1
+  - part: 1
+    probability: 0.9
+    amountOptions:
+    - amount: 1
+      weight: 1
+    - amount: 2
+      weight: 1
+    isBodySegment: 0
+    isMirrored: 0
+    lengthOptions:
+    - amount: 0.04
+      weight: 1
+    - amount: 0.13
+      weight: 2
+    - amount: 0.22
+      weight: 1
+    radiusOptions:
+    - amount: 0.008
+      weight: 1
+    - amount: 0.0165
+      weight: 2
+    - amount: 0.025
+      weight: 1
+  - part: 2
+    probability: 0.5
+    amountOptions:
+    - amount: 1
+      weight: 1
+    - amount: 2
+      weight: 1
+    - amount: 3
+      weight: 1
+    - amount: 4
+      weight: 1
+    - amount: 5
+      weight: 1
+    isBodySegment: 0
+    isMirrored: 1
+    lengthOptions:
+    - amount: 0.25
+      weight: 1
+    - amount: 0.575
+      weight: 2
+    - amount: 0.9
+      weight: 1
+    radiusOptions:
+    - amount: 0.006
+      weight: 1
+    - amount: 0.012
+      weight: 2
+    - amount: 0.018
+      weight: 1
+  - part: 3
+    probability: 0.9
+    amountOptions:
+    - amount: 2
+      weight: 1
+    - amount: 3
+      weight: 1
+    - amount: 4
+      weight: 1
+    - amount: 5
+      weight: 1
+    - amount: 6
+      weight: 1
+    - amount: 7
+      weight: 1
+    - amount: 8
+      weight: 1
+    - amount: 9
+      weight: 1
+    - amount: 10
+      weight: 1
+    isBodySegment: 0
+    isMirrored: 1
+    lengthOptions:
+    - amount: 0.06
+      weight: 1
+    - amount: 0.14
+      weight: 2
+    - amount: 0.22
+      weight: 1
+    radiusOptions:
+    - amount: 0.03
+      weight: 1
+    - amount: 0.07
+      weight: 2
+    - amount: 0.11
+      weight: 1
+  - part: 5
+    probability: 0.9
+    amountOptions:
+    - amount: 3
+      weight: 1
+    - amount: 4
+      weight: 1
+    - amount: 5
+      weight: 1
+    - amount: 6
+      weight: 1
+    - amount: 7
+      weight: 1
+    - amount: 8
+      weight: 1
+    - amount: 9
+      weight: 1
+    - amount: 10
+      weight: 1
+    isBodySegment: 0
+    isMirrored: 1
+    lengthOptions:
+    - amount: 0.45
+      weight: 1
+    - amount: 0.775
+      weight: 2
+    - amount: 1.1
+      weight: 1
+    radiusOptions:
+    - amount: 0.015
+      weight: 1
+    - amount: 0.03
+      weight: 2
+    - amount: 0.045
+      weight: 1
+  - part: 6
+    probability: 0.9
+    amountOptions:
+    - amount: 1
+      weight: 1
+    - amount: 2
+      weight: 1
+    - amount: 3
+      weight: 1
+    - amount: 4
+      weight: 1
+    - amount: 5
+      weight: 1
+    isBodySegment: 0
+    isMirrored: 1
+    lengthOptions:
+    - amount: 0.35
+      weight: 1
+    - amount: 0.65
+      weight: 2
+    - amount: 0.95
+      weight: 1
+    radiusOptions:
+    - amount: 0.15
+      weight: 1
+    - amount: 0.3
+      weight: 2
+    - amount: 0.45
+      weight: 1
+  - part: 8
+    probability: 0.7
+    amountOptions:
+    - amount: 1
+      weight: 1
+    - amount: 2
+      weight: 1
+    - amount: 3
+      weight: 1
+    isBodySegment: 0
+    isMirrored: 0
+    lengthOptions:
+    - amount: 0.08
+      weight: 1
+    - amount: 0.265
+      weight: 2
+    - amount: 0.45
+      weight: 1
+    radiusOptions:
+    - amount: 0.008
+      weight: 1
+    - amount: 0.0215
+      weight: 2
+    - amount: 0.035
+      weight: 1
